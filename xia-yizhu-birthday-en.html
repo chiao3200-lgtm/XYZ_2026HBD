@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>夏以晝 · 0613 · 夏日晝光</title>
+<title>Cable · 0613 · Summer Daylight</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@
   --gold:    #f0c074;   /* 晝 · 暖陽金 */
   --gold2:   #ffdc9a;
   --goldd:   #c8964a;
-  --cyan:    #74b0ea;   /* 世界線 · 星藍 */
+  --cyan:    #74b0ea;   /* universe · 星藍 */
   --cyan2:   #a3d0f6;
   --rose:    #e7a0ac;   /* 心動 · 微光玫瑰 */
 
@@ -358,7 +358,7 @@ html,body{
 .st-tap{position:absolute;bottom:9px;right:14px;font-family:var(--mono);font-size:10.5px;letter-spacing:0.16em;color:var(--tx4);animation:tb 2.4s ease-in-out infinite;}
 @keyframes tb{0%,100%{opacity:1}50%{opacity:0.25}}
 
-/* 隱藏 UI 狀態 */
+/* HIDDEN UI 狀態 */
 #scr-story.ui-off .st-box{opacity:0;transform:translateY(30px);pointer-events:none;}
 #scr-story.ui-off .st-nav{opacity:0;transform:translateY(-16px);pointer-events:none;}
 .st-restore{position:absolute;inset:0;z-index:11;display:none;align-items:flex-end;justify-content:center;padding-bottom:46px;cursor:pointer;}
@@ -480,8 +480,8 @@ html,body{
     <div class="m-hero">
       <div class="m-orbit"></div>
       <div class="m-kick kicker">Multiverse Collection · 0613</div>
-      <div class="m-title">生日特別企劃</div>
-      <div class="m-name">夏以晝</div>
+      <div class="m-title">A Birthday Special</div>
+      <div class="m-name">Cable</div>
       <div class="m-en">Across Every Universe</div>
       <div class="m-date">JUNE · 13 · 2026</div>
     </div>
@@ -504,8 +504,8 @@ html,body{
       <div class="bday-shell">
         <div class="bday-ic">🎂</div>
         <div class="bday-tx">
-          <div class="bday-h">夏以晝生日快樂</div>
-          <div class="bday-sub">今日無限抽取已解鎖</div>
+          <div class="bday-h">Happy Birthday, Cable</div>
+          <div class="bday-sub">Unlimited draws unlocked today</div>
         </div>
       </div>
     </div>
@@ -514,30 +514,30 @@ html,body{
     <div class="m-prev">
       <div class="prev-head">
         <div class="l">CARD PREVIEW</div>
-        <div class="r">已收藏 <b id="prev-count">0</b> / <span id="prev-total">11</span></div>
+        <div class="r">Collected <b id="prev-count">0</b> / <span id="prev-total">11</span></div>
       </div>
       <div class="prev-viewport">
-        <button class="prev-nav left" onclick="scrollPrev(-1)" aria-label="上一張">‹</button>
+        <button class="prev-nav left" onclick="scrollPrev(-1)" aria-label="Previous">‹</button>
         <div class="prev-scroll" id="prev-scroll"></div>
-        <button class="prev-nav right" onclick="scrollPrev(1)" aria-label="下一張">›</button>
+        <button class="prev-nav right" onclick="scrollPrev(1)" aria-label="Next">›</button>
       </div>
     </div>
 
     <div class="m-actions">
-      <button class="btn btn-gold" onclick="goGacha()">抽取回憶</button>
-      <button class="btn btn-line" onclick="goGallery()">回憶圖鑑 · <span id="gc-count">0</span> / <span class="gc-total">11</span></button>
+      <button class="btn btn-gold" onclick="goGacha()">Draw a Memory</button>
+      <button class="btn btn-line" onclick="goGallery()">Memory Gallery · <span id="gc-count">0</span> / <span class="gc-total">11</span></button>
     </div>
   </div>
 
   <!-- ══ GACHA ══ -->
   <div class="scr" id="scr-gacha">
     <div class="top-bar">
-      <div class="tt"><div class="a">進入平行宇宙</div><div class="b">UNIVERSE GACHA</div></div>
-      <button class="btn btn-ghost" onclick="show('scr-main')">← 返回</button>
+      <div class="tt"><div class="a">Enter the Universe</div><div class="b">UNIVERSE GACHA</div></div>
+      <button class="btn btn-ghost" onclick="show('scr-main')">← Back</button>
     </div>
     <div class="gx-body">
       <div class="gx-stage">
-        <div class="gx-orb" id="gx-orb" onclick="doPull()" role="button" aria-label="點擊抽卡">
+        <div class="gx-orb" id="gx-orb" onclick="doPull()" role="button" aria-label="Tap to draw">
           <span class="gx-glow"></span>
           <span class="gx-pulse"></span>
           <span class="gx-pulse d"></span>
@@ -579,10 +579,10 @@ html,body{
             </span>
           </span>
         </div>
-        <div class="gx-cta" onclick="doPull()"><span class="cta-ic">👆</span><span>點擊水晶 · 抽卡</span></div>
+        <div class="gx-cta" onclick="doPull()"><span class="cta-ic">👆</span><span>Tap the Crystal · Draw</span></div>
         <div class="gx-remain" id="gx-remain"></div>
       </div>
-      <div class="gx-tip">每天可抽取 <b>一次</b> 生日倒數回憶<br>抽到後可進入劇情，並 <b>匯出專屬卡面</b></div>
+      <div class="gx-tip">One draw per day — <b>once</b> a birthday-countdown memory<br>after drawing, enter the story and <b>export your own card</b></div>
     </div>
   </div>
 
@@ -594,20 +594,20 @@ html,body{
         <div class="art" id="rv-art"></div>
         <div class="rv-bot">
           <div class="rv-bwl" id="rv-bwl">XYZ-?</div>
-          <div class="rv-bname" id="rv-bname">夏以晝</div>
+          <div class="rv-bname" id="rv-bname">Cable</div>
         </div>
       </div>
       <div class="rv-info">
         <div class="rv-wl2" id="rv-wl2">UNIVERSE XYZ-?</div>
-        <div class="rv-name" id="rv-name">夏以晝</div>
-        <div class="rv-tone" id="rv-tone">抵達世界</div>
+        <div class="rv-name" id="rv-name">Cable</div>
+        <div class="rv-tone" id="rv-tone">Universe Reached</div>
       </div>
     </div>
     <div class="rv-btns">
-      <button class="btn btn-gold" id="rv-enter">進入回憶劇情</button>
+      <button class="btn btn-gold" id="rv-enter">Enter the Story</button>
       <div class="rv-row">
-        <button class="btn btn-line" onclick="exportCard(S.curCard)">⤓ 匯出卡面</button>
-        <button class="btn btn-text" id="rv-second" style="flex:0 0 auto;padding:14px 18px;">稍後</button>
+        <button class="btn btn-line" onclick="exportCard(S.curCard)">⤓ Export Card</button>
+        <button class="btn btn-text" id="rv-second" style="flex:0 0 auto;padding:14px 18px;">Later</button>
       </div>
     </div>
   </div>
@@ -622,22 +622,22 @@ html,body{
     <div class="st-frame"></div>
 
     <div class="st-nav" id="st-nav">
-      <div class="st-tagcode" id="st-tagcode">WORLDLINE XYZ-?</div>
+      <div class="st-tagcode" id="st-tagcode">UNIVERSE XYZ-?</div>
       <div class="st-navbtns">
-        <button class="btn btn-ghost" onclick="toggleHideUI()">隱藏對話</button>
-        <button class="btn btn-ghost" onclick="skipStory()">跳過 ⏭</button>
+        <button class="btn btn-ghost" onclick="toggleHideUI()">Hide Text</button>
+        <button class="btn btn-ghost" onclick="skipStory()">Skip ⏭</button>
       </div>
     </div>
 
     <div class="st-restore" id="st-restore" onclick="toggleHideUI()">
-      <div class="pill">點擊任意處 · 顯示對話</div>
+      <div class="pill">Tap anywhere · Show text</div>
     </div>
 
     <div class="st-box" id="st-box">
       <div class="st-inner" onclick="nextLine()">
-        <div class="st-spk" id="st-spk">夏以晝</div>
+        <div class="st-spk" id="st-spk">Cable</div>
         <div class="st-txt" id="st-txt"><span class="st-cursor"></span></div>
-        <div class="st-tap">點擊繼續</div>
+        <div class="st-tap">Tap to continue</div>
       </div>
     </div>
   </div>
@@ -645,11 +645,11 @@ html,body{
   <!-- ══ GALLERY ══ -->
   <div class="scr" id="scr-gallery">
     <div class="top-bar">
-      <div class="tt"><div class="a">回憶圖鑑</div><div class="b" id="gal-sub">0 / 11</div></div>
-      <button class="btn btn-ghost" onclick="show('scr-main')">← 返回</button>
+      <div class="tt"><div class="a">Memory Gallery</div><div class="b" id="gal-sub">0 / 11</div></div>
+      <button class="btn btn-ghost" onclick="show('scr-main')">← Back</button>
     </div>
     <div class="gal-grid" id="gal-grid"></div>
-    <div class="gal-foot"><button class="btn btn-line" onclick="show('scr-main')" style="width:100%">← 返回主頁</button></div>
+    <div class="gal-foot"><button class="btn btn-line" onclick="show('scr-main')" style="width:100%">← Back to Home</button></div>
   </div>
 
   <!-- ══ HIDDEN ══ -->
@@ -657,20 +657,20 @@ html,body{
     <div class="h-bg"></div><div class="h-scan"></div><div class="h-frame"></div>
     <div class="h-body">
       <div class="h-tag">DAA · CLASSIFIED</div>
-      <div class="h-h">秘密故事</div>
+      <div class="h-h">Secret Story</div>
       <div class="h-e" id="h-emoji">🌙</div>
       <div class="h-box" onclick="nextHidden()">
-        <div class="h-tag2">夏以晝</div>
+        <div class="h-tag2">Cable</div>
         <div class="h-txt" id="h-txt">…</div>
-        <div class="h-tap">點擊繼續</div>
+        <div class="h-tap">Tap to continue</div>
       </div>
       <a class="h-album hidden" id="h-album" onclick="ageGate()" style="cursor:pointer">
         <div class="ic"> </div>
-        <div><div class="l">SECRET ENDING · 18+</div><div class="t">秘密結局（獨立頁面）→</div></div>
+        <div><div class="l">SECRET ENDING · 18+</div><div class="t">Secret Ending (separate page) →</div></div>
         <div class="ar">›</div>
       </a>
     </div>
-    <div class="h-foot"><button class="btn btn-gold" id="h-btn" onclick="hiddenAct()" style="width:100%">繼續</button></div>
+    <div class="h-foot"><button class="btn btn-gold" id="h-btn" onclick="hiddenAct()" style="width:100%">Continue</button></div>
   </div>
 
   <!-- ══ CREDITS ══ -->
@@ -678,26 +678,26 @@ html,body{
     <div class="cr-hero">
       <div class="cr-glow"></div>
       <div class="cr-e" id="cr-e">🌸</div>
-      <div class="cr-t">夏以晝 · 生日企劃</div>
+      <div class="cr-t">Cable · Birthday Project</div>
       <div class="cr-d">JUNE · 13 · 2026</div>
     </div>
     <div class="cr-scroll">
       <div class="cr-body">
         <div id="cr-cards"></div>
-        <div class="cr-thx">恭喜達成全收集結局<br>感謝遊玩的各位</div>
-        <div class="cr-sm">© 2026 夏以晝生日企劃<br>角色版權歸屬《戀與深空》</div>
+        <div class="cr-thx">Full collection complete!<br>Thank you for playing</div>
+        <div class="cr-sm">© 2026 Cable Birthday Project<br>Character © Love and Deepspace</div>
       </div>
     </div>
-    <div class="cr-back"><button class="btn btn-line" onclick="show('scr-main')" style="width:100%">回到主頁</button></div>
+    <div class="cr-back"><button class="btn btn-line" onclick="show('scr-main')" style="width:100%">Back to Home</button></div>
   </div>
 
   <!-- ══ MODAL / FLASH / TOAST ══ -->
   <div class="modal-bg" id="modal-bg">
     <div class="modal-card">
       <div class="modal-icon" id="m-icon">✦</div>
-      <div class="modal-title" id="m-title">今日已抽取</div>
-      <div class="modal-msg" id="m-msg">今天已抽過了，明天再回來吧。</div>
-      <button class="btn modal-ok" onclick="closeModal()">好的</button>
+      <div class="modal-title" id="m-title">Already Drawn Today</div>
+      <div class="modal-msg" id="m-msg">You have already drawn today. Come back tomorrow.</div>
+      <button class="btn modal-ok" onclick="closeModal()">OK</button>
     </div>
   </div>
   <div id="flash"></div>
@@ -707,10 +707,10 @@ html,body{
   <div class="modal-bg" id="age-bg">
     <div class="modal-card age-card">
       <div class="age-icon">⚠️</div>
-      <div class="modal-title">成人內容警告</div>
-      <div class="age-msg">秘密結局為 <b>獨立頁面</b>，包含成人向（18+）親密情節。<br>請確認您已年滿 18 歲再繼續。</div>
-      <button class="btn age-yes" onclick="ageConfirm()">我已年滿 18 歲 · 進入</button>
-      <button class="btn age-no" onclick="ageCancel()">尚未成年 · 返回</button>
+      <div class="modal-title">Adult Content Warning</div>
+      <div class="age-msg">The secret ending is a <b>separate page</b> and contains adult (18+) intimate scenes.<br>Please confirm you are 18 or older to continue.</div>
+      <button class="btn age-yes" onclick="ageConfirm()">I'm 18 or older · Enter</button>
+      <button class="btn age-no" onclick="ageCancel()">Under 18 · Back</button>
     </div>
   </div>
 
@@ -721,60 +721,58 @@ html,body{
    ▸ 加入真實卡面圖：把對應卡片的 img / bg 路徑填上即可（emoji 會自動讓位）
      img : 3:4 直式卡面主圖（揭示 / 圖鑑 / 預覽 / 匯出 共用）
      bg  : 9:19.5 直式全螢幕劇情背景（可省略，省略時自動用 img）
-   ▸ 詳細尺寸請見「夏以晝_圖片規格表」
+   ▸ 詳細尺寸請見「XiaYizhu_圖片規格表」
 */
 const TOTAL=11;
 const WL=[
-  {id:'XYZ-11',theme:'統帥',tone:'溫柔索求',emoji:'⚔️',bg:'#0e1326',img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-11.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-11.png",
-   quote:'我可以認為妳是刻意在等我？',
-   lines:[{s:'',t:'深夜的女王寢殿，女王早早就寢，本該安靜的房內卻出現了腳步聲'},{s:'夏以晝',t:'今天女王陛下就寢的很早。'},{s:'夏以晝',t:'我可以認為妳是刻意在等我？'},{s:'',t:'就著月光，他那雙對外總是冰冷淡漠的雙眼，此刻盛滿溫柔地看著妳。'},{s:'夏以晝',t:'不回答，我就當作是妳允許了，陛下。'},{s:'',t:'那一夜你們暫時忘卻外面的鬥爭算計與各種角力，只留下最原始的模樣。'}]},
-  {id:'XYZ-10',theme:'附骨',tone:'兩人的安全島',emoji:'🐺',bg:'#0d1a10',img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-10.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-10.png",
-   quote:'我最希望妳能開心...在哪都可以。',
-   lines:[{s:'',t:'下城區的安全島，這裡有許多兩人之間最私密的情感與回憶，也是他們最能坦誠相見的地方。'},{s:'夏以晝',t:'……妳果然在'},{s:'你',t:'你也來了，我還是最習慣這裡'},{s:'夏以晝',t:'...妳還是不願意住到我那。'},{s:'',t:'然後是長達三秒的沉默。夏以晝往前一步把妳拉進懷裡。'},{s:'夏以晝',t:'算了，我最希望妳能開心...在哪都可以。'}]},
-  {id:'XYZ-9',theme:'DAA大學',tone:'擋箭牌',emoji:'📚',bg:'#181008',img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-9.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-9.png",
-   quote:'都充當我的女友了，我也不是不能成為妳的『擋箭牌』。',
-   lines:[{s:'',t:'快步走出地鐵站，今天被大學活動耽誤了時間，差點就要錯過最後一班車。'},{s:'夏以晝',t:'跑這麼快，不怕跌倒？'},{s:'你',t:'哥!你回來了!'},,{s:'夏以晝',t:'學校放假我難得早早回來，結果家裡沒人在。'},{s:'你',t:'奶奶跟朋友去旅遊了，今天當救援差點走不了...'},{s:'',t:'明明已經長大，但在夏以晝面前卻總是不自覺的撒嬌。'},{s:'夏以晝',t:'下次可以傳訊息讓我打電話給妳。'},{s:'夏以晝',t:'都充當我的女友了，我也不是不能成為妳的『擋箭牌』。'},{s:'夏以晝',t:'餓了吧，哥帶妳去吃宵夜。'}]},
-  {id:'XYZ-8',theme:'高中',tone:'青澀時光',emoji:'🏫',bg:'#071820',img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-8.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-8.png",
-   quote:'小貪吃鬼，哪次沒有讓妳吃到滿意過，走吧。',
-   lines:[{s:'',t:'放學後的走廊上，就看到他等在教室前面，臉上帶著笑但妳知道他現在不開心。'},{s:'夏以晝',t:'那個……剛剛跟妳說話的是誰？'},{s:'你',t:'同班同學啊，他今天跟我借筆記說放學後要請我喝飲料，但我今天不太想喝就拒絕了。'},{s:'夏以晝',t:'這樣啊……我本來還想找妳去吃冰，看來……'},{s:'',t:'夏以晝視線落在妳臉上，眼角帶著笑看的妳心癢癢的，覺得他笑的勾人。'},{s:'你',t:'現在又想吃了，夏以晝難得要請客我要吃最大碗的!'},{s:'夏以晝',t:'小貪吃鬼，哪次沒有讓妳吃到滿意過，走吧。'}]},
-  {id:'XYZ-7',theme:'童年',tone:'童年約定',emoji:'🍎',bg:'#1a0808',img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-7.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-7.png",
-   quote:'說好了，以後吵架不能冷戰到隔天。',
-   lines:[{s:'',t:'小時候吵吵鬧鬧，某次吵得很兇但忘記是為了什麼，還跟夏以晝鬧了很久的脾氣。'},{s:'小夏以晝',t:'還在生氣?我買了吸吸凍要不要吃?'},{s:'你',t:'要吃。'},{s:'小夏以晝',t:'終於理我了。再不理我我就要拿出和好券了'},{s:'',t:'他伸手摸摸妳的頭，看著吃滿嘴糖水的樣子笑了'},{s:'小夏以晝',t:'哥哥跟你道歉，但是說好了，以後吵架不能冷戰到隔天。'},{s:'',t:'那日老宅院子在夕陽映照下，小小的兩人一起分享果凍的時光成了抹不去的記憶。'}]},
-  {id:'XYZ-6',theme:'執艦官',tone:'唯一座標',emoji:'🚀',bg:'#060820',img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-6.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-6.png",
-   quote:'妳是我唯一的方向。',
-   lines:[{s:'',t:'深空隧道中，艦隊指揮室內夏以晝正坐在辦公桌前，無數星點在窗外流逝。'},{s:'夏以晝',t:'上次收到文字訊息是三天前，終於又有新訊息。'},{s:'你',t:'這次任務有點太久了，夏以晝，我想你了。'},{s:'夏以晝',t:'...我也想妳了。'},{s:'',t:'三日後，一則訊息傳送到妳的手機。'},{s:'夏以晝',t:'我也很想妳，妳收到這則訊息的時候我已經回到妳身邊，我的小海鳥。'},{s:'',t:'此時鑰匙轉開門鎖的聲音響起，妳快步衝到門前，投入熟悉的懷抱中。'}]},
-  {id:'XYZ-5',theme:'飛行員',tone:'飛行承諾',emoji:'✈️',bg:'#071520',img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-5.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-5.png",
-   quote:'不管哪裡，我都會帶妳去。',
-   lines:[{s:'',t:'廣闊的停機坪，其中一艘正在準備起飛。'},{s:'夏以晝',t:'檢查完畢，副機長準備好了嗎。'},{s:'',t:'他輕擁著妳，他的氣息讓妳感到安心，為接下來的行程感到興奮'},{s:'夏以晝',t:'跟當初約定好的一樣，不管哪裡，我都會帶妳去。'},{s:'',t:'拋開所有束縛，夏以晝完成了小時候的約定，他將會帶妳去任何地方。'}]},
-  {id:'XYZ-4',theme:'芍溪谷谷主',tone:'繁花怒放',emoji:'🌸',bg:'#140818',img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-4.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-4.png",
-   quote:'想要哥陪妳做什麼?',
-   lines:[{s:'',t:'芍溪谷百花盛開，夏以晝一如往常整理著藥材，妳無聊的在他邊上撿著毒物。'},{s:'夏以晝',t:'別吃太多，晚點飯又吃不下。'},{s:'妳',t:'我無聊嘛，不然哥你陪陪我。'},{s:'',t:'他放下手上藥材轉過身，將賴在他背上的妳放到了一旁的石頭上。'},{s:'夏以晝',t:'行，陪妳。想要哥陪妳做什麼?'},{s:'妳',t:'那就...吹笛子給我聽。'},{s:'夏以晝',t:'好。'},{s:'',t:'芍溪谷揚起了悠揚的笛聲，伴隨著微風撫過滿谷芍藥與溪流的水聲，歲月不過如此。'}]},
-  {id:'XYZ-3',theme:'幽冥冥主',tone:'並蒂雙生',emoji:'🔥',bg:'#1e0606',img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-3.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-3.png",
-   quote:'只需妳我相拜，共飲合巹酒。',
-   lines:[{s:'',t:'冥王府邸此時張燈結綵，點起了大紅的燈籠。'},{s:'夏以晝',t:'今日是我們成親的日子。'},{s:'夏以晝',t:'先前的不算，今日...正式熱熱鬧鬧辦一回'},{s:'',t:'他俯身，拇指輕抬起妳的下巴，紫色的眼眸中映照出妳被燭火映照的紅艷臉龐。'},{s:'夏以晝',t:'但我們不拜天地高堂，只需妳我相拜，共飲合巹酒...'},{s:'夏以晝',t:'爾後並蒂相連水乳交融，我們...將走過永生永世。'}]},
-  {id:'XYZ-2',theme:'X-02',tone:'最初也是最後',emoji:'🤖',bg:'#040e18',img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-2.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-2.png",
-   quote:'哥哥就是心甘情願為妹妹做任何事。',
-   lines:[{s:'',t:'他的眼眸閃爍著橙色光源。'},{s:'X-02',t:'......'},{s:'X-02',t:'我想讓妳體驗更多，讓妳過得更開心。'},{s:'',t:'他輕輕的將手撫上妳的臉，眼底承載著滿溢的溫柔。'},{s:'妳',t:'為什麼...?'},{s:'X-02',t:'因為...我是妳的哥哥，哥哥就是心甘情願為妹妹做任何事。'}]},
-  {id:'XYZ-1',theme:'日常',tone:'平凡幸福',emoji:'☕',bg:'#141008',img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-1.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-1.png",
-   quote:'就這樣依賴我，一輩子。',
-   lines:[{s:'',t:'晴朗的早晨，在經歷過激烈的一晚後，廚房裡傳來輕微的聲響。妳循著香味來到了餐桌前。'},{s:'夏以晝',t:'怎麼起來了，不多睡一下?'},{s:'',t:'夏以晝將手上的早餐放到了妳面前，看妳半瞇著眼沒有動作，笑著將食物切成小塊直接餵進妳嘴裡。'},{s:'夏以晝',t:'小饞鬼，臉上沾到了。這樣也要吃真是服了妳。'},{s:'',t:'吃完早餐，妳對著夏以晝伸手，他習慣地將妳抱起。'},{s:'妳',t:'……夏以晝，我真的要被你養廢了。'},{s:'夏以晝',t:'有什麼關係，這樣就很好，就這樣依賴我，一輩子。'}]},
+  {id:"XYZ-11",theme:"Marshal",tone:"A Tender Demand",emoji:"⚔️",bg:"#0e1326",img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-11.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-11.png",
+   quote:"Am I to assume you stayed awake on purpose, waiting for me?",
+   lines:[{s:"",t:"Deep in the night, the Queen had retired early. Yet footsteps broke the silence of a chamber that should have been still."},{s:"Cable",t:"Her Majesty turns in early tonight."},{s:"Cable",t:"Am I to assume you stayed awake on purpose... waiting for me?"},{s:"",t:"In the moonlight, those eyes — always cold and distant to the world — now brimmed with tenderness, fixed only on you."},{s:"Cable",t:"If you will not answer, I will take your silence as permission, Your Majesty."},{s:"",t:"That night, you both set aside the schemes and power struggles of the outside world, leaving only your truest selves."}]},
+  {id:"XYZ-10",theme:"Inseparable",tone:"Their Safe Haven",emoji:"🐺",bg:"#0d1a10",img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-10.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-10.png",
+   quote:"All I want is for you to be happy... anywhere is fine.",
+   lines:[{s:"",t:"The safe house in the Lower City — keeper of your most private feelings and memories, the one place you two can be completely honest."},{s:"Cable",t:"...So you are here."},{s:"You",t:"You came too. This place still feels the most like home to me."},{s:"Cable",t:"...You still will not move in with me."},{s:"",t:"Then came a silence, three seconds long. Cable stepped forward and pulled you into his arms."},{s:"Cable",t:"Never mind. All I want is for you to be happy... anywhere is fine."}]},
+  {id:"XYZ-9",theme:"DAA University",tone:"The Shield",emoji:"📚",bg:"#181008",img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-9.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-9.png",
+   quote:"Since you already play my girlfriend, I might as well be your 'shield'.",
+   lines:[{s:"",t:"You hurried out of the subway station. A campus event had run late, and you nearly missed the last train."},{s:"Cable",t:"Running that fast — aren't you afraid you'll trip?"},{s:"You",t:"Gege! You're back!"},{s:"Cable",t:"School's on break, so I came home early for once — only to find no one here."},{s:"You",t:"Grandma went travelling with friends. I was on a rescue shift today and almost couldn't get away..."},{s:"",t:"Grown up as you are, you always end up acting spoiled in front of Cable without meaning to."},{s:"Cable",t:"Next time, just message me and I'll call you."},{s:"Cable",t:"Since you already play my girlfriend, I suppose I can be your 'shield' too."},{s:"Cable",t:"You must be hungry. Come on — Gege will take you for a late-night snack."}]},
+  {id:"XYZ-8",theme:"High School",tone:"Bittersweet Youth",emoji:"🏫",bg:"#071820",img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-8.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-8.png",
+   quote:"Little glutton — have I ever once left you unsatisfied? Let's go.",
+   lines:[{s:"",t:"In the corridor after school, you found him waiting outside the classroom. He was smiling — but you could tell he wasn't happy."},{s:"Cable",t:"So... who was that talking to you just now?"},{s:"You",t:"A classmate. He borrowed my notes and offered to buy me a drink after school, but I didn't feel like it, so I said no."},{s:"Cable",t:"I see... I was going to take you out for shaved ice. But I guess..."},{s:"",t:"His gaze settled on your face, a teasing smile at the corner of his eyes that made your heart flutter — he smiled like he knew exactly how to reel you in."},{s:"You",t:"Now I want some! Since Cable's treating — for once — I'm getting the biggest bowl!"},{s:"Cable",t:"Little glutton. Have I ever once left you unsatisfied? Come on."}]},
+  {id:"XYZ-7",theme:"Childhood",tone:"A Childhood Promise",emoji:"🍎",bg:"#1a0808",img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-7.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-7.png",
+   quote:"It's a promise — no more cold wars that drag past the next day.",
+   lines:[{s:"",t:"As kids you bickered endlessly. Once you fought so badly over something you've long forgotten, and stayed cross with Cable for ages."},{s:"Young Cable",t:"Still angry? I bought a squeeze-jelly — want some?"},{s:"You",t:"Yes."},{s:"Young Cable",t:"Finally talking to me again. Any longer and I'd have pulled out a make-up coupon."},{s:"",t:"He reached over and patted your head, laughing at the sugar-water smeared all over your mouth."},{s:"Young Cable",t:"Gege's sorry. But it's a promise — no more cold wars that last into the next day."},{s:"",t:"That afternoon in the old courtyard, bathed in sunset — two small figures sharing jelly — became a memory that could never fade."}]},
+  {id:"XYZ-6",theme:"Fleet Commander",tone:"The Only Coordinate",emoji:"🚀",bg:"#060820",img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-6.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-6.png",
+   quote:"You are my only direction.",
+   lines:[{s:"",t:"In a deep-space corridor, Cable sat at the desk of the fleet command room, countless stars streaming past the window."},{s:"Cable",t:"The last text came three days ago. Finally, a new message."},{s:"You",t:"This mission has dragged on too long. Cable, I miss you."},{s:"Cable",t:"...I miss you too."},{s:"",t:"Three days later, a message arrived on your phone."},{s:"Cable",t:"I miss you too. By the time you read this, I'll already be back by your side, my little seabird."},{s:"",t:"Just then, a key turned in the lock. You rushed to the door and threw yourself into those familiar arms."}]},
+  {id:"XYZ-5",theme:"Pilot",tone:"A Promise to Fly",emoji:"✈️",bg:"#071520",img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-5.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-5.png",
+   quote:"Wherever it is, I'll take you there.",
+   lines:[{s:"",t:"A vast airfield. One craft was making its final preparations for takeoff."},{s:"Cable",t:"All checks complete. Ready, co-pilot?"},{s:"",t:"He held you gently. His presence put you at ease, and excitement rose for the journey ahead."},{s:"Cable",t:"Just like we promised back then — wherever it is, I'll take you there."},{s:"",t:"Free of every constraint, Cable kept his childhood promise: he would take you anywhere."}]},
+  {id:"XYZ-4",theme:"Lord of Shaoxi Valley",tone:"Flowers in Full Bloom",emoji:"🌸",bg:"#140818",img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-4.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-4.png",
+   quote:"What would you like Gege to keep you company doing?",
+   lines:[{s:"",t:"In Shaoxi Valley a hundred flowers bloomed. Cable sorted his herbs as always, while you idly picked through poisonous plants beside him."},{s:"Cable",t:"Don't eat too many, or you won't have room for dinner."},{s:"You",t:"I'm bored. Come on, Gege, keep me company."},{s:"",t:"He set down the herbs and turned, lifting you — who had been clinging to his back — onto a nearby stone."},{s:"Cable",t:"Fine, I'll keep you company. What would you like Gege to do?"},{s:"You",t:"Then... play the flute for me."},{s:"Cable",t:"Alright."},{s:"",t:"A melodious flute rose over Shaoxi Valley, mingling with the breeze through the peony fields and the murmur of the stream. Such was the gentle passing of days."}]},
+  {id:"XYZ-3",theme:"Lord of the Netherworld",tone:"Twin Blossoms, One Stem",emoji:"🔥",bg:"#1e0606",img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-3.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-3.png",
+   quote:"We need only bow to each other and share the wedding wine.",
+   lines:[{s:"",t:"The Netherlord's manor was decked in festive red, great crimson lanterns aglow."},{s:"Cable",t:"Today is the day we wed."},{s:"Cable",t:"The last time doesn't count. Today... we do it properly, with all the joy and ceremony."},{s:"",t:"He leaned down, his thumb tilting your chin up. In his violet eyes shone your face, flushed crimson in the candlelight."},{s:"Cable",t:"But we bow to no heaven nor elders — we need only bow to each other and share the wedding wine..."},{s:"Cable",t:"And thereafter, twin blossoms on one stem, two souls as one, we shall walk through all eternity together."}]},
+  {id:"XYZ-2",theme:"X-02",tone:"The First and the Last",emoji:"🤖",bg:"#040e18",img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-2.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-2.png",
+   quote:"A big brother will gladly do anything for his little sister.",
+   lines:[{s:"",t:"His eyes flickered with an orange glow."},{s:"X-02",t:"......"},{s:"X-02",t:"I want you to experience more. I want you to live more happily."},{s:"",t:"He gently laid his hand against your cheek, his eyes brimming with overflowing tenderness."},{s:"You",t:"Why...?"},{s:"X-02",t:"Because... I am your big brother. And a big brother will gladly do anything for his little sister."}]},
+  {id:"XYZ-1",theme:"Everyday",tone:"Ordinary Bliss",emoji:"☕",bg:"#141008",img:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/art_XYZ-1.png",scene:"https://cdn.jsdelivr.net/gh/chiao3200-lgtm/XYZ_2026HBD@main/img/scene_XYZ-1.png",
+   quote:"Just keep depending on me like this — for the rest of your life.",
+   lines:[{s:"",t:"A clear morning, after a passionate night. A faint clatter drifted from the kitchen, and you followed the aroma to the table."},{s:"Cable",t:"You're up? Why not sleep a little longer?"},{s:"",t:"He set breakfast in front of you. Seeing you half-asleep and unmoving, he laughed, cut the food into small pieces, and fed it to you himself."},{s:"Cable",t:"Little glutton, you've got some on your face. Eating even like this — you're hopeless."},{s:"",t:"After breakfast, you reached out to him, and he lifted you up as he always does."},{s:"You",t:"...Cable, you're really going to spoil me rotten."},{s:"Cable",t:"So what? This is just right. Keep depending on me like this — for the rest of your life."}]},
 ];
 
 const HIDDEN=[
-  '恭喜收集完成，即將開啟秘密結局！',
+  "Congratulations on completing the collection! The secret ending is about to be unlocked!",
   ];
 
-/* ━━━ 結算頁圖示設定 ━━━
-   想換成圖片：把 img 填上路徑即可（留空則用 emoji）。
-   hero 建議正方形 1:1；icon 建議正方形 1:1。 */
 const CREDITS={
-  hero:{emoji:'🍎', img:''},          // 結算頁頂部大圖示
+  hero:{emoji:"🍎", img:""},
   cards:[
-    {role:'STORY & DESIGN', name:'夏以晝應援企劃-蒼斐', emoji:'✦', img:''},
-    {role:'CHARACTER',      name:'戀與深空 · 夏以晝', emoji:'✦',  img:''},
-    {role:'SPECIAL THANKS', name:'致 每一位玩家',   emoji:'✦', img:''},
+    {role:"STORY & DESIGN", name:"Cable Fan Project - TsangFei", emoji:"✦", img:""},
+    {role:"CHARACTER",      name:"Love and Deepspace · Cable", emoji:"✦",  img:""},
+    {role:"SPECIAL THANKS", name:"To every player",   emoji:"✦", img:""},
   ]
 };
+
 const KEY={col:'xyz26c_col',pull:'xyz26c_pull',fb:'xyz26c_fb',hid:'xyz26c_hid'};
 let S={collected:[],curCard:null,from:'reveal',revCtx:'draw',idx:0,lines:[],typing:false,hidIdx:0,hidDone:false,seIdx:0,seTyping:false};
 let seT=null;
@@ -857,7 +855,7 @@ function scrollPrev(dir){
   const el=document.getElementById('prev-scroll');
   PV.contentW=measureContent(el);PV.auto=false;
   let p=el.scrollLeft;
-  if(dir<0&&p<PREV_STEP)p+=PV.contentW;   // 在最左點「上一張」→ 從尾端循環
+  if(dir<0&&p<PREV_STEP)p+=PV.contentW;   // 在最左點「Previous」→ 從尾端循環
   PV.pos=p;PV.target=p+dir*PREV_STEP;PV.step=true;
 }
 
@@ -888,7 +886,7 @@ function renderPreview(){
     const got=S.collected.includes(card.id);
     return `<div class="prev-card ${got?'unlocked':'locked'}" onclick="previewTap('${card.id}',${got})">
       <div class="art">${artHTML(card)}</div>
-      <div class="pc-meta"><div class="pc-wl">WORLDLINE ${card.id}</div><div class="pc-name">${got?card.theme:'？？？'}</div></div>
+      <div class="pc-meta"><div class="pc-wl">UNIVERSE ${card.id}</div><div class="pc-name">${got?card.theme:'？？？'}</div></div>
       <div class="pc-lock">🔒</div>
     </div>`;
   };
@@ -898,7 +896,7 @@ function renderPreview(){
   syncCounts();
 }
 function previewTap(id,got){
-  if(!got){toast('尚未解鎖');return;}
+  if(!got){toast('Not unlocked yet');return;}
   const card=WL.find(c=>c.id===id);S.curCard=card;enterStory('home');
 }
 
@@ -920,11 +918,11 @@ function updateCd(){
 /* ━━━━━━━━━━━━ GACHA ━━━━━━━━━━━━ */
 function goGacha(){
   const rem=TOTAL-S.collected.length;
-  document.getElementById('gx-remain').textContent=rem<=0?'全收集 · 隨機回顧模式':'尚待收集 '+rem+' 個世界線';
+  document.getElementById('gx-remain').textContent=rem<=0?'Full Set · Random Replay':'Still to collect '+rem+' universes';
   show('scr-gacha');
 }
 function doPull(){
-  if(!canPull()){showModal('🌙','今日已抽取','今天已經抽過了。\n明天再回來繼續吧。');return;}
+  if(!canPull()){showModal('🌙','Already Drawn Today','You have already drawn today.\nCome back tomorrow.');return;}
   const pool=S.collected.length>=TOTAL?WL:WL.filter(w=>!S.collected.includes(w.id));
   const card=pool[Math.floor(Math.random()*pool.length)];
   const isNew=!S.collected.includes(card.id);
@@ -942,9 +940,9 @@ function renderReveal(card,isNew,ctx){
   S.curCard=card;S.revCtx=ctx;
   document.getElementById('rv-art').innerHTML=artHTML(card);
   document.getElementById('rv-bwl').textContent=card.id;
-  document.getElementById('rv-bname').textContent='夏以晝 · '+card.theme;
-  document.getElementById('rv-wl2').textContent='WORLDLINE '+card.id;
-  document.getElementById('rv-name').textContent='夏以晝 · '+card.theme;
+  document.getElementById('rv-bname').textContent='Cable · '+card.theme;
+  document.getElementById('rv-wl2').textContent='UNIVERSE '+card.id;
+  document.getElementById('rv-name').textContent='Cable · '+card.theme;
   document.getElementById('rv-tone').textContent=card.tone;
   const c=document.getElementById('rv-card');
   c.querySelectorAll('.rv-new').forEach(e=>e.remove());
@@ -952,8 +950,8 @@ function renderReveal(card,isNew,ctx){
   // 按鈕依情境切換
   const enter=document.getElementById('rv-enter'),second=document.getElementById('rv-second');
   enter.onclick=()=>enterStory(ctx==='gallery'?'gallery':'reveal');
-  if(ctx==='gallery'){second.textContent='返回圖鑑';second.onclick=()=>{renderGallery();show('scr-gallery');};}
-  else{second.textContent='稍後';second.onclick=afterReveal;}
+  if(ctx==='gallery'){second.textContent='Back to Gallery';second.onclick=()=>{renderGallery();show('scr-gallery');};}
+  else{second.textContent='Later';second.onclick=afterReveal;}
   const w=document.getElementById('rv-wrap');w.style.animation='none';void w.offsetWidth;w.style.animation='';
   show('scr-reveal');
 }
@@ -970,7 +968,7 @@ function enterStory(from){
   S.lines=card.lines;S.idx=0;S.typing=false;
   const scr=document.getElementById('scr-story');
   scr.classList.remove('ui-off');
-  scr.classList.toggle('daa-on',/X-02|鬼王|執艦|飛行|統帥/.test(card.theme));
+  scr.classList.toggle('daa-on',/X-02|Netherworld|Fleet|Pilot|Marshal/.test(card.theme));
   const art=document.getElementById('st-art');
   const bg=card.scene||card.img;
   if(bg){
@@ -980,14 +978,14 @@ function enterStory(from){
     art.style.background=`linear-gradient(165deg,${card.bg} 0%,#05070f 130%)`;
     art.innerHTML=`<div class="st-emoji" id="st-emoji">${card.emoji}</div>`;
   }
-  document.getElementById('st-tagcode').textContent='WORLDLINE '+card.id+' · '+card.theme;
+  document.getElementById('st-tagcode').textContent='UNIVERSE '+card.id+' · '+card.theme;
   show('scr-story');setTimeout(renderLine,200);
 }
 function renderLine(){
   if(S.idx>=S.lines.length){endStory();return;}
   const l=S.lines[S.idx];
   const spk=document.getElementById('st-spk'),txt=document.getElementById('st-txt');
-  spk.textContent=l.s||'旁白';spk.classList.toggle('show',!!l.s);
+  spk.textContent=l.s||'Narration';spk.classList.toggle('show',!!l.s);
   txt.innerHTML='<span class="st-cursor"></span>';
   S.typing=true;let i=0;const t=l.t;
   if(typT)clearInterval(typT);
@@ -1004,7 +1002,7 @@ function endStory(){
   if(S.from==='gallery'){renderGallery();show('scr-gallery');}
   else if(S.from==='home'){show('scr-main');}
   else if(S.collected.length>=TOTAL&&!hiddenSeen()){goHidden();}
-  else{toast('回憶已收藏 · 別忘了匯出卡面');show('scr-main');}
+  else{toast('Memory collected · remember to export your card');show('scr-main');}
 }
 
 /* ━━━━━━━━━━━━ GALLERY ━━━━━━━━━━━━ */
@@ -1026,13 +1024,13 @@ function renderGallery(){
     }
     grid.appendChild(el);
   });
-  // 隱藏結局解鎖後加入圖鑑
+  // HIDDEN結局解鎖後加入圖鑑
   if(hiddenSeen()){
     const el=document.createElement('div');
     el.className='g-item unlocked g-secret';
     el.innerHTML=`<div class="art"><div class="art-emoji" style="background:linear-gradient(155deg,#1a0a18,#070a14)">🌙</div><div class="art-grad"></div></div>
-      <div class="g-meta"><div class="g-wl">SECRET</div><div class="g-name">禁忌世界線</div></div>
-      <div class="g-secret-tag">隱藏</div>`;
+      <div class="g-meta"><div class="g-wl">SECRET</div><div class="g-name">Forbidden Universe</div></div>
+      <div class="g-secret-tag">HIDDEN</div>`;
     el.onclick=()=>goHidden('gallery');
     grid.appendChild(el);
   }
@@ -1044,7 +1042,7 @@ function goHidden(from){
   S.hidFrom=from||'auto';
   S.hidIdx=0;S.hidDone=false;
   document.getElementById('h-emoji').textContent='🌙';
-  document.getElementById('h-btn').textContent='繼續';
+  document.getElementById('h-btn').textContent='Continue';
   document.getElementById('h-album').classList.add('hidden');
   typeH(HIDDEN[0]);show('scr-hidden');
 }
@@ -1055,8 +1053,8 @@ function nextHidden(){
   if(S.hidIdx>=HIDDEN.length){
     S.hidDone=true;
     document.getElementById('h-emoji').textContent='🍎';
-    document.getElementById('h-txt').textContent='……他在等妳。';
-    document.getElementById('h-btn').textContent=(S.hidFrom==='gallery')?'返回圖鑑':'前往結算頁面 →';
+    document.getElementById('h-txt').textContent='...He is waiting for you.';
+    document.getElementById('h-btn').textContent=(S.hidFrom==='gallery')?'Back to Gallery':'Go to Credits →';
     document.getElementById('h-album').classList.remove('hidden');
   }else typeH(HIDDEN[S.hidIdx]);
 }
@@ -1066,8 +1064,8 @@ function hiddenAct(){
   else show('scr-credits');
 }
 
-/* ━━━━━━━━━━━━ AGE GATE → 秘密結局獨立頁面 ━━━━━━━━━━━━ */
-const SECRET_URL='secret-ending.html';
+/* ━━━━━━━━━━━━ AGE GATE → 秘密結局separate page ━━━━━━━━━━━━ */
+const SECRET_URL='secret-ending-en.html';
 function ageGate(){document.getElementById('age-bg').classList.add('on');}
 function ageCancel(){document.getElementById('age-bg').classList.remove('on');}
 function ageConfirm(){
@@ -1085,7 +1083,7 @@ function cover(x,im,dx,dy,dw,dh){const ir=im.width/im.height,dr=dw/dh;let sw,sh,
 const EXP_SANS='"PingFang TC","Microsoft JhengHei","Heiti TC","Noto Sans TC","Noto Sans CJK TC","Hiragino Sans GB",sans-serif';
 const EXP_MONO='"Space Mono","Menlo",monospace';
 function exportCard(card){
-  if(!card){toast('請先抽取一張卡');return;}
+  if(!card){toast('Draw a card first');return;}
   const W=1080,H=1720;
   const cv=document.createElement('canvas');cv.width=W;cv.height=H;
   const x=cv.getContext('2d');
@@ -1108,29 +1106,29 @@ function exportCard(card){
   x.strokeStyle='rgba(240,192,116,0.55)';x.lineWidth=2;roundRect(x,ax,ay,aw,ah,28);x.stroke();
   // 圖內角標
   x.textAlign='left';x.textBaseline='alphabetic';
-  x.fillStyle='#a3d0f6';x.font='700 24px '+EXP_MONO;x.fillText('WORLDLINE '+card.id,ax+32,ay+ah-86);
-  x.fillStyle='#ffffff';x.font='600 44px '+EXP_SANS;x.fillText('夏以晝 · '+card.theme,ax+32,ay+ah-40);
+  x.fillStyle='#a3d0f6';x.font='700 24px '+EXP_MONO;x.fillText('UNIVERSE '+card.id,ax+32,ay+ah-86);
+  x.fillStyle='#ffffff';x.font='600 44px '+EXP_SANS;x.fillText('Cable · '+card.theme,ax+32,ay+ah-40);
   // 倒數
   x.textAlign='center';
-  const dl=daysLeft();const cdText=(dl<=0||isBday())?'生日快樂 · JUNE 13':'距離生日還有 '+dl+' 天 · JUNE 13';
+  const dl=daysLeft();const cdText=(dl<=0||isBday())?'Happy Birthday · JUNE 13':'Days until birthday: '+dl+' · JUNE 13';
   x.fillStyle='#f0c074';x.font='700 30px '+EXP_MONO;x.fillText('✦  '+cdText+'  ✦',W/2,1322);
   // 金句（黑體）
   x.fillStyle='#eef3fc';x.font='500 46px '+EXP_SANS;
   wrapText(x,'「'+card.quote+'」',W/2,1470,W-220,66);
   // 分隔線 + 頁腳
   x.strokeStyle='rgba(240,192,116,0.4)';x.lineWidth=1;x.beginPath();x.moveTo(W/2-120,1600);x.lineTo(W/2+120,1600);x.stroke();
-  x.fillStyle='#8a98ba';x.font='400 24px '+EXP_MONO;x.fillText('0613 · 夏以晝生日企劃',W/2,1654);
+  x.fillStyle='#8a98ba';x.font='400 24px '+EXP_MONO;x.fillText('0613 · Cable Birthday Project',W/2,1654);
   x.fillStyle='#5f6d92';x.font='400 20px '+EXP_SANS;x.fillText('Across Every Worldline',W/2,1692);
 
   try{
     cv.toBlob(b=>{
-      if(!b){toast('匯出失敗，請改用截圖');return;}
-      const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='夏以晝_'+card.id+'_'+card.theme+'.png';
+      if(!b){toast('Export failed — please screenshot instead');return;}
+      const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='XiaYizhu_'+card.id+'_'+card.theme+'.png';
       document.body.appendChild(a);a.click();a.remove();
       setTimeout(()=>URL.revokeObjectURL(a.href),1500);
-      toast('已匯出卡面 ⤓');
+      toast('Card exported ⤓');
     },'image/png');
-  }catch(e){toast('匯出受限，請改用截圖');}
+  }catch(e){toast('Export blocked — please screenshot instead');}
 }
 function wrapText(x,text,cx,cy,maxW,lh){
   const chars=[...text];let line='',lines=[];
